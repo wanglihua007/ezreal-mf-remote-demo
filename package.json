@@ -8,7 +8,7 @@
     "react-dom": "^17.0.2"
   },
   "scripts": {
-    "start": "ezreal start",
+    "start": "cross-env PORT=50052 ezreal start",
     "build": "ezreal build",
     "release": "standard-version",
     "lint": "yarn lint:js && yarn lint:style && yarn lint:prettier",
@@ -51,6 +51,7 @@
     "@types/react": "^17.0.0",
     "@types/react-dom": "^17.0.0",
     "commitizen": "^4.2.4",
+    "cross-env": "^7.0.3",
     "cz-conventional-changelog": "^3.3.0",
     "cz-customizable": "^6.3.0",
     "eslint": "^7.32.0",

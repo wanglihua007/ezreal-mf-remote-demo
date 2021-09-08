@@ -1,26 +1,27 @@
-import React from 'react'
-import logo from './logo.svg'
+import React, { Suspense, useEffect } from 'react'
 import classes from './App.module.css'
 
+const Chip = React.lazy(() => import('app2/Chip'))
 function App() {
+  useEffect(() => {
+    import('app2/components')
+      .then((res: any) => {
+        console.log(`res`, res)
+        setTimeout(() => {
+          res.message.success('加载remote项目成功，我是来自remote的message')
+        }, 500)
+      })
+      .catch((err) => {
+        console.log(`components-err`, err)
+      })
+  }, [])
   return (
-    <div className={classes.App}>
-      <header className={classes['App-header']}>
-        <img src={logo} className={classes['App-logo']} alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className={classes['App-link']}
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      珊珊珊珊
+      <Suspense fallback="loading...">
+        <Chip />
+      </Suspense>
     </div>
   )
 }
-
 export default App

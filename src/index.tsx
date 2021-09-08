@@ -3,6 +3,8 @@ import ReactDOM from 'react-dom'
 import './index.css'
 import App from './App'
 
+window.app1Url = 'http://localhost:50051'
+
 ReactDOM.render(
   <React.StrictMode>
     <App />

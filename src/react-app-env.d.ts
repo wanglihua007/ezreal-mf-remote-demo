@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 /// <reference types="node" />
 /// <reference types="react" />
 /// <reference types="react-dom" />
@@ -68,4 +69,17 @@ declare module '*.module.scss' {
 declare module '*.module.sass' {
   const classes: { readonly [key: string]: string }
   export default classes
+}
+
+interface Window {
+  app1Url: string
+}
+
+declare module 'app2/Chip' {
+  const Chip: () => JSX.Element
+  export default Chip
+}
+declare module 'app2/components' {
+  const components: { readonly [key: any]: any }
+  export default components
 }
